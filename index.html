@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahira Delalic resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!--
+        Name: Fahira Delalic
+        Course: CS412.1
+        Assignment: Project 3 - A resume website done with Html & CSS & JavaScript
+        Due date: 9.12.2021.
+        Purpose: Familiarize ourselves with main JS elements and build an interactive website 
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <!--The following div contains all the elements of the website, I purposely wanted to emphasize the body in the middle-->
+    <!-- <div class="first-thing">
+        Welcome to my resume page
+    </div> -->
+    <div class="container" id="container">
+        <!--I used bootstrap to make the navbar sticked to the top, always visible when we scroll-->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light mode" style="background-color: rgb(250, 244, 245);">
+            <a class="navbar-brand" href="#aboutme">About me</a> &nbsp;
+            <a class="navbar-brand" href="#education">Education</a> &nbsp;
+            <a class="navbar-brand" href="#experience">Experience & Volunteering</a> &nbsp;
+            <a class="navbar-brand" href="#skills">Skills</a> &nbsp;
+            <a class="navbar-brand" href="#contact">Contact me</a> 
+            <button id="switch" class ="toggle-dark-light" type="button" >Dark Mode</button>
+        </nav>
+        <!--Again I used bootdtrap to create the layout I wanted for each row and column throughout the site-->
+        <header class="header-class">
+            <div class="row mode" id="firstRow">
+                <div class="col-md-4" align="center"> <!--This is a class for the left part of header (photo, name)-->
+                     
+                    <img src="images/fahkec.jpg" class="zoom" />
+                    <h2 class="name" id="name"></h2> 
+                    <h4>- a student of Computer Science and Engineering </h4>
+                </div>
+                <div class="col-md-8" align="center"> <!--and the class for the right side, the citation, the number of columns must add up to 12-->
+                    <div class="nav-and-cite">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="quote-intro"><p><cite class ="cite">"Work for this world as if you will live forever and work for the here-after as if you will die tomorrow."</cite> Imam Ali ibn Abu Talib</p> 
+                        </div>
+                            <br>
+                        <p id="watch"></p>
+
+                        <div class="flowers" align="right">
+                            <img class="flower" src="images/flowers.svg" alt="flowers-graphic">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </header>
+    
+    <!--  We finished the header portion of the page -->
+    <!--
+        In the following lines I used bootstrap layout again (separation into columns) which automatically takes care of 
+        browser changing size, the elements will fit every proportion
+    -->
+   <div class="row mode">
+       <div class="col-md-8">
+           <!-- for each title, the added icon is taken from bootstrap, because they are all in svg format, and retain their resolution
+                 I gave the same class to these titles so that I can edit them all together in css portion
+            -->
+        <h2 class="text-hover"><a name="aboutme">About me</a> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+          </svg></h2>
+          <br>
+        <p>A third year student of Computer Science and Engineering, at International University of Sarajevo. <br> Pasionate about writing algorithms and understanding hardware components 
+            in detail. I also love finding out about new technologies and learning about them. Besides engineering, I enjoy watching movies, spending time with friends and family, running and working out. <br>
+        I occasionaly try different hobbies like embroidery, photography, painting, hiking, sewing. I have watched a great numer of movies and have developed a <i>feeling</i> for spotting the good ones. </p>
+       </div>
+       <div class="col-md-4">
+        <h2 class="text-hover"><a name="education">Education</a> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+            <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+          </svg> </h2>
+          <br>
+        <ul>
+            <li><h5 class="text-hover">International University of Sarajevo</h5> <!--I used nested lists to add more inforation about each of the levels of education.-->
+                <ul>
+                    <li >Computer Science and Engineering</li>
+                    <li>2019 - present</li>
+                    <li><a href="https://www.ius.edu.ba/"  target=”_blank”><abbr title="International University of Sarajevo">IUS</abbr> website</a></li>
+                </ul>
+            </li>
+            <li><h5 class="text-hover">Elci Ibrahim - pasina medresa</h5>
+                <ul>
+                    <li>2014 - 2019</li>
+                </ul>
+            </li>
+            <li><h5 class="text-hover">Primary school "Mehurici"</h5>
+                <ul>
+                    <li>2007 - 2014</li>
+                </ul>
+            </li>
+        </ul>
+       </div>
+   </div>
+   <div class="row">
+       <div class="col-md-8 mode">
+        <h2 class="text-hover"><a name="experience">Experience & Volunteering</a> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+            <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
+          </svg></h2>
+          <br>
+        <!--
+            The following is a table with all the experiences listed, along with specifications and details of my position. 
+        -->
+        <div class="langs mode">
+            <!--I used bootstrap to put the effect to rows when they are hovered over
+                and also to fit the site properly when it is resized
+            -->
+        <table class ="table  table-sm mode" border="1" cellpadding="10"  width="800">
+            <tr>
+                <th> Time period </th><th> Position </th>
+            </tr>
+            <tr>
+                <td> October 2021 - February 2022</td>
+                <td>
+                    <h4 class="text-hover"> <i>Teaching assistant at <abbr title="International University of Sarajevo">IUS</abbr> (Introduction to programming)</i> </h4>
+                    <p>Responsible for:</p>
+                    <ul type = "circle">
+                        <li> Preparing and holding weekly labs which means solving a number of problems <br> related to the topics of the same week, <br> plus preparing additional interesting problems. </li>
+                        <li> Grading students's homeworks and being at their disposal for any confusions regarding the homework. </li>
+                        <li> Recording the attendance and participation during the labs. </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td> June 2021 - August 2021</td>
+                <td>
+                    <h4 class="text-hover"> <i>Photographer and workshop holder for Qatar Charity</i></h4>
+                    
+                    <ul type = "circle">
+                        <li>Responsible for documenting weekly excursions for orphaned children, <br>
+                            by taking photos of the event.
+                        </li>
+                        <li>Holding the workshops for little kids in "Using the computer ans creating cards using the Canva app" and <br>
+                            in "Islamic topics".
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td> May 2019 - October 2019 </td>
+                <td>
+                    <h4 class="text-hover"><i>Help in the kitchen at <em>Ascinica Plava voda</em> in Travnik</i></h4>
+                    <ul type = "circle">
+                        <li> A challenging work during the highest season, almost every day. </li>
+                        <li> Responsible for all the "litle things in the kitchen and being ready to jump in and help all the other workers." </li>
+                        <li> This job was great at teaching me how to  withstand the long hours repeatedly and function in a high-speed, dinamic environment.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td> Summer 2015 </td>
+                <td>
+                    <h4 class="text-hover"><i> A salesperson/clerk at my uncle's <strong>strawberry</strong> plantation</i></h4>
+                    <p>Responsible for:</p>
+                    <ul type = "circle">
+                        <li>Dealing with the customers on a daily basis, <br> in a sense of weighing and selling the strawberries both to the smaller and larger buyers.</li>
+                        <li>Recording the amounts of picked strawberries for each worker. </li>
+                        <li>Organizing the paperwork and finances at the end of each workday. </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+       </div>
+       <div class="col-md-4">
+           <div class="skills" id="skill">
+        <h2 class="text-hover"><a name="skills">Skills</a> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bricks" viewBox="0 0 16 16">
+            <path d="M0 .5A.5.5 0 0 1 .5 0h15a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H14v2h1.5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5H2v-2H.5a.5.5 0 0 1-.5-.5v-3A.5.5 0 0 1 .5 6H2V4H.5a.5.5 0 0 1-.5-.5v-3zM3 4v2h4.5V4H3zm5.5 0v2H13V4H8.5zM3 10v2h4.5v-2H3zm5.5 0v2H13v-2H8.5zM1 1v2h3.5V1H1zm4.5 0v2h5V1h-5zm6 0v2H15V1h-3.5zM1 7v2h3.5V7H1zm4.5 0v2h5V7h-5zm6 0v2H15V7h-3.5zM1 13v2h3.5v-2H1zm4.5 0v2h5v-2h-5zm6 0v2H15v-2h-3.5z"/>
+          </svg></h2>
+          <br>
+        <ul>
+            <li>Languages: 
+                <table class = "langs" cellpadding="8" frame="box">
+                    <tr>
+                        <td>Bosnian</td><td>Native language</td>
+                    </tr>
+                    <tr>
+                        <td>English</td><td>C1 - C2</td>
+                    </tr>
+                    <tr>
+                        <td>Arabic</td><td>A1</td>
+                    </tr>
+                    <tr>
+                        <td>Turskish</td><td>A1</td>
+                    </tr>
+                </table>
+            </li> <br>
+            <li>Programming languages:
+                <table class = "langs" cellpadding="8" frame="box">
+                    <tr>
+                        <td>C++</td>
+                    </tr>
+                    <tr>
+                        <td>Java</td>
+                    </tr>
+                    <tr>
+                        <td>HTML, CSS, JavaScript</td>
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                    </tr>
+                    <tr>
+                        <td>Julia</td>
+                    </tr>
+                </table>
+            </li>
+            <br>
+            <li> Excellent teamwork skills, ability to explain a problem in different levels of difficulty and expertise. 
+            </li>
+            <li>
+                Good at time management and very organized with work.
+           </li>
+            <li>
+                 Photography
+            </li>
+        </ul>
+        <!--I used iframe and changed width and height to fit it into the browser-->
+        <iframe src="https://giphy.com/embed/AZRGsY2bsGLTAolNL4" width="310" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        
+        <p class="visual-rep-text">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
+              </svg> visual representation of how skilled I am at sport...</p>
+       </div>
+    </div>
+   </div>
+
+<div class="row mode">
+<div class="wrapper mode">
+    <ul class="tabs">
+        <li><a href="javascript:void(0); return false;" rel="#tabcontent1" class="tab active">Contact me</a></li>
+        <li><a href="javascript:void(0); return false;" rel="#tabcontent2" class="tab">Address</a></li>
+        <li><a href="javascript:void(0); return false;" rel="#tabcontent3" class="tab">The map</a></li>
+        
+    </ul>
+    
+    <div class="tab_content_container mode">
+        <div class="tab_content tab_content_active mode" id="tabcontent1">
+            <h3>Send me a message</h3>
+            <p>You can <a href="mailto: fahiradelalic3110@gmail.com"> send me an email</a> or you can send a message
+                directly below:</p>
+            
+            <form>
+                Your name: <input type="text" name="Name and Surname" /> <br>
+                Your email: <input type="email" name="Email" /> <br>
+                <br>
+                <textarea name="message" cols="50" rows="7" placeholder="Type your message here!"></textarea> <br>
+                <button class="my-button" type="button">Send</button>
+            </form>
+        </div>
+        
+        <div class="tab_content mode" id="tabcontent2">
+            <h3>My address</h3>
+            <address>
+                <p>Phone number: <a href="tel:+38761046716">+38761046716</a></p>
+                <p>Address: Suhi Dol bb 72282 Travnik, BiH</p>
+            </address>
+        </div>
+        
+        <div class="tab_content mode" id="tabcontent3">
+            <h3>Map</h3>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11427.684958916492!2d17.699841235484303!3d44.27043991567759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475eff2398aa0493%3A0xddac9bb42cef73e!2sSuhi%20Dol!5e0!3m2!1shr!2sba!4v1634856823984!5m2!1shr!2sba"
+                    width="440" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+</div>
+   <br>
+   <!--In order to have the following part on the middle I put it into the middle column of the three same columns I created-->
+   <footer class="mode" align="center">
+       <div class="row">
+           <div class="col-md-4"></div>
+           <div class="col-md-4">
+            <p class="text-hover"><i><strong>Visit me on social media: </strong></i> </p>
+            <br>
+            <p> 
+                <a href="https://www.linkedin.com/in/fahira-delali%C4%87-9612401a5/"  target=”_blank”><img src="images/linkedin.png" alt="Link to a linkedin page" title="Click to visit my LinkedIn"height="45" width="55"></a> &nbsp; 
+                <a href="https://www.instagram.com/delalic.f/"  target=”_blank”><img src="images/ig.png" alt="Link to an Instagram account" title="Click to visit my instagram" width="50" height="50"></a> &nbsp;
+                <a href="https://www.facebook.com/fahira.delalic.5"  target=”_blank”><img src="images/fb.png" alt="Link to a Facebook account" title="Click to visit my facebook"width="50" height="50"></a>
+             </p>
+           <hr>
+           </div>
+           <div class="col-md-4"></div>
+       </div>
+          
+    <br>
+    <br>
+    <br>
+    <a id="go-to-top" href="#"><img src="images/arrow-up-circle.svg" alt="top" height="50" width="50"></a>
+</footer>
+</div>
+<script src="index.js"></script>
+</body>
+</html>

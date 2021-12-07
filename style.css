@@ -1,0 +1,309 @@
+/* 
+
+        Name: Fahira Delalic
+        Course: CS412.1
+        Assignment: Project 3 - A resume website done with Html & CSS & JavaScript
+        Due date: 9.12.2021.
+        Purpose: Familiarize ourselves with main JS elements and build an interactive website 
+    
+*/
+/* I imported the font from Google Fonts page */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+/*Here I declared the variables for the colors, because I changed
+  them frequently and this way was easier*/
+:root{
+    --pink: rgba(70, 29, 38, 0.966);
+    --lightpink: rgb(250, 244, 245);
+    --header: rgb(236, 233, 206);
+}
+
+/* generalities for the whole document */
+body{
+    padding: 9%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: var(--pink);
+    font-family: 'Lora', serif;
+}
+/* .first-thing{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 300px;
+    width: 300px;
+    background: radial-gradient( white,#EAEAFC);
+    color: rgba(58, 23, 31, 0.966);
+    text-align: center;
+} */
+/* I tried different styles throughout the page so I commented things that I didn't like
+   I wanted to experiment and play a little */
+.container {
+    /* background-image: url(images/back.png);
+    opacity: 0.2; */
+    background-color: var(--lightpink);
+    display: none;
+}
+
+
+
+
+.toggle-dark-light{
+    height: 50px;
+    background-color: inherit;
+    border-radius: 50%;
+    position: inherit;
+    top: 2em;
+    left: 80%;
+}
+.to-dark {
+    background-color: rgba(58, 23, 31, 0.966);
+    color: rgb(230, 220, 220);
+}
+
+
+.header-class {
+    background-color: var(--header);
+}
+/* changed the color of links */
+a{
+    color: rgb(231, 39, 151);
+}
+/* made the underline disappear */
+a:link {
+    text-decoration: none;
+  }
+
+/* changed the color when mouse over link */
+a:hover {
+    color: rgb(148, 0, 32);
+    text-decoration: underline;
+}
+  
+/* selected link */
+a:active {
+    color: rgb(213, 174, 224);
+  }
+ 
+/* padding for each row, since almost complete layout is done using rows and cols */
+.row{
+    padding: 1%;
+}
+
+/* this and zoom:hover portion edit the profile photo and 
+add the effect of zooming in the picture when the mouse is over it */
+.zoom {
+    border-radius: 50%;
+    display: inline-block;
+    width: 150px;
+    height: 170px;
+    padding: 1px;
+    background-color: rgb(233, 218, 227);
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+  }
+  .zoom:hover {
+    transform: scale(1.1); /* (110% zoom)*/
+  }
+
+
+.text-hover {
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+}  
+/* also added the effect of zooming for every significant title */
+.text-hover:hover{
+    transform: scale(1.01);
+}
+
+/* I edited the decorative picture in the angle of header
+   I also had to flip it on the x axis to properly fit the angle */
+.flower-graphic{
+    margin-right: 0;
+    margin-left: 5;
+    margin-bottom: 0;
+}  
+.flower{
+    height: 100px;
+    width: 100px;
+    transform: scaleX(-1); /* fliping it */
+}     
+
+
+/* .nav-and-cite {
+    
+    /* position: fixed; */
+    /* top: 20px; */
+    /*width: 50%;
+    border: 3px;
+    padding: 10px; */
+    /* text-decoration: none; 
+
+} */
+
+
+.cite {
+    padding: 30px;
+}
+
+
+ /* .navbar {
+    background-color: rgb(240, 220, 224);
+}  */
+/* li { 
+    list-style-image: url(images/puzzle.svg); 
+    /* margin-left: -20px; 
+    margin-right: 10px;  */
+
+
+
+/*here I added the shadow around tables to make them stand out a bit*/
+.langs {
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+}
+/* edited the column with skills by rounding the edges, changing the color and adding padding*/
+.skills{
+    border-radius: 2%;
+    padding: 15px;
+    background-color: var(--header);
+}
+
+/* I used unicode of the "sparkle" emoji to change the bullet points */
+.skills li:before{
+
+    content: '\2728';
+    margin-left: -20px; 
+    margin-right: 10px;
+
+}
+
+/* in the following lines I edited the form additionaly, by changing the border */
+input {
+    border: 1px solid var(--pink);
+    border-radius: 4px;
+}
+input:hover {
+    border: 3px solid #555;
+  }
+textarea{
+    border: 2px solid var(--pink);
+    border-radius: 4px;
+}
+
+/* the button will change color when hovered over thanks to the following to portions */
+.my-button {
+    background-color: var(--lightpink);
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    border: 2px solid var(--pink);
+}
+.my-button:hover {
+    background-color: var(--pink);
+    color: white;
+}
+
+/* attributes that helped me fit the map as I desired */
+.map {
+    position: relative;
+    margin-right: 2px;
+}
+.wrapper { width:980px; margin:auto; }
+
+ul.tabs { 
+    margin:0; 
+    padding:0; 
+    float:left; 
+}
+
+ul.tabs li { 
+    float:left; 
+    display:inline; 
+    margin-right:1px; 
+    cursor:pointer; 
+    font-weight:bold;  
+}
+
+ul.tabs li a { 
+    width:195px; 
+    line-height:30px; 
+    background:var(--pink); 
+    text-align:center; 
+    float:left; 
+    text-decoration:none; 
+    color:#fff; 
+    border-radius: 5%;
+}
+
+ul.tabs li a:hover, ul.tabs li a.active { 
+    background:#fff; 
+    color:var(--pink); 
+}
+
+.tab_content_container { 
+    width:940px; 
+    height:200px; 
+    float:left; 
+    background:#fff; 
+    padding:20px; 
+    margin-top:1px; 
+    font-size:14px; 
+    border-radius:0 0 10px 10px; 
+    -moz-border-radius:0 0 10px 10px; 
+    -webkit-border-radius:0 0 10px 10px; 
+    display:block;
+}
+
+.tab_content { 
+    display:none; 
+    position:absolute;  
+    width:940px; 
+    height:200px; 
+    overflow:auto; 
+    overflow-x:hidden;
+}
+
+.tab_content_active { 
+    display:block; 
+    position:absolute; 
+    width:940px; 
+    height:200px; 
+    overflow:auto; 
+    overflow-x:hidden;  
+}
+
+.tab_content_active span { 
+    float:left; 
+    width:100px; 
+    margin-right:20px; 
+}
+
+#go-to-top {
+    position: fixed;
+    bottom: 3em;
+    right: 3em;
+    background-color: rgba(255, 255, 255, .9);
+    color: #313943;
+    border: none;
+    border-radius: 5px;
+    padding: 1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 0 2em 0 rgba(0, 0, 0, .25);
+    transition: all .3s ease-in-out;
+    display: inline-block;
+    opacity: 0;
+    text-decoration: none;
+    font-size: .75em;
+}
+
+    #go-to-top:hover {
+        background-color: #fff;
+        padding: 1em 3em;
+    }
+
+#go-to-top.visible {
+    opacity: 1;
+}
